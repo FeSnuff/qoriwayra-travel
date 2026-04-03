@@ -1,4 +1,5 @@
 import icono from "@/public/favicon.png";
+import Script from "next/script";
 
 export const metadata = {
   title: 'Qori Wayra Travel',
@@ -11,7 +12,6 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
-    // Para desactivar en staging podrías poner index:false
   },
   openGraph: {
     title: 'Qori Wayra Travel',
@@ -38,7 +38,21 @@ export const viewport = {
 export default function LandingLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18039475306"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18039475306');
+          `}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }
