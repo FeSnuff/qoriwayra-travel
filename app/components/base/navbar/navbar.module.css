@@ -1,0 +1,245 @@
+/* ================================
+   NAVBAR.MODULE.CSS
+   ================================ */
+
+/* Estilos locales para el navbar */
+.navbar {
+  /* Variables locales (definidas solo aquí) */
+  --navbar-bg: #236967;
+  --logo-height: 2rem;
+  --text-size-nav: 1rem;
+  --dropdown-min-width: 14rem; /* 14rem ≈ 224px */
+  --dropdown-bg:rgb(255, 255, 255);
+  --dropdown-border: 1px solid #888175;
+  --dropdown-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --dropdown-radius: 0.3125rem;
+  --dropdown-padding: 0.625rem 0;
+  --dropdown-item-padding: 0.313rem 0.938rem;
+  --dropdown-item-hover-bg: #e7e2d8;
+  --dropdown-item-hover-color: #888175;
+
+  background-color: var(--navbar-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Un padding moderado para dar espacio suficiente a los lados */
+  padding: 10px 20px; /* top-bottom left-right */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  /* Permite que el dropdown se muestre si sobresale */
+  overflow-x: visible;
+}
+
+/* Contenedor interno del navbar */
+.navContent {
+  display: flex;
+  align-items: center;
+  justify-content: left; /* En pantallas grandes, el contenido inicia a la izquierda */
+  width: 100%;         /* Ajuste según tu preferencia */
+  margin: 0 auto;       /* Centra ligeramente el contenedor si lo deseas */
+}
+
+/* Sección superior: Selector de idioma + Hamburguesa (móvil) */
+.topSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  justify-content: flex-start; /* Ubicado a la izquierda por defecto */
+}
+
+/* Bloque izquierdo: Selector de idioma + botón hamburguesa */
+.leftContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Botón hamburguesa (oculto en escritorio, visible en móvil) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #BFB8AA;
+  cursor: pointer;
+}
+
+/* Centro: Logo */
+.centerContent {
+  margin: 0 2vw;
+  text-align: center;
+}
+
+.logo {
+  height: var(--logo-height);
+  width: auto;
+  display: block;
+}
+
+/* Menú principal (derecha) */
+.menu {
+  display: flex;
+  align-items: center;
+  padding-right: 100px;
+}
+
+/* Lista de enlaces */
+.navList {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cada ítem del navbar */
+.navItem {
+  position: relative;
+  margin-right: 1.25rem;
+}
+
+/* Botones y enlaces */
+.navItem button,
+.navItem a {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--text-size-nav);
+  color: #BFB8AA;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.navItem button:hover,
+.navItem a:hover {
+  background-color: rgba(201, 195, 195, 0.1);
+  border-radius: 4px;
+}
+
+.navItem button:active,
+.navItem button:focus,
+.navItem a:active,
+.navItem a:focus {
+  background-color: #0d3b2f;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Dropdown: se posiciona debajo del botón, alineado al lado izquierdo 
+   o derecho según necesites, pero aquí se deja left: 0 para mayor control */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--dropdown-bg);
+  border: var(--dropdown-border);
+  box-shadow: var(--dropdown-shadow);
+  list-style: none;
+  padding: var(--dropdown-padding);
+  margin: 5px;
+  z-index: 3000; /* Mayor z-index para que se vea por encima de otros elementos */
+  min-width: var(--dropdown-min-width);
+  border-radius: var(--dropdown-radius);
+  overflow: visible;
+}
+
+.dropdown li a {
+  display: block;
+  color: #776b54;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: var(--dropdown-item-padding);
+  transition: background-color 0.3s ease;
+}
+
+.dropdown li a:hover {
+  background-color: var(--dropdown-item-hover-bg);
+  color: var(--dropdown-item-hover-color);
+}
+
+/* ================================
+   RESPONSIVE (Tablet y Móvil)
+   ================================ */
+
+/* Pantallas menores a 768px */
+@media (max-width: 768px) {
+  /* NavContent se apila en columna y se alinea a la izquierda */
+  .navContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Muestra el botón hamburguesa */
+  .hamburger {
+    display: block;
+    font-size: 1.75rem;
+  }
+
+  /* topSection ocupa todo el ancho y alinea contenido a la izquierda */
+  .topSection {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* Menú móvil: se despliega debajo del topSection */
+  .menu {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    margin-top: 0.5rem;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .navList {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navItem {
+    margin-right: 0;
+    margin-bottom: 0.625rem;
+    width: 100%;
+  }
+
+  .navItem button,
+  .navItem a {
+    width: 100%;
+    text-align: left;
+    font-size: 0.95rem;
+    padding: 8px 15px;
+  }
+
+  /* Dropdown en móvil: Posición estática para integrarse en el flujo */
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    border: none;
+    min-width: 0;
+  }
+}
+
+/* Pantallas muy pequeñas (max-width: 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 5vw;
+  }
+
+  .logo {
+    height: 1.8rem;
+  }
+
+  .hamburger {
+    font-size: 2rem;
+  }
+
+  .navItem button,
+  .navItem a {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+}

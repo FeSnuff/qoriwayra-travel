@@ -1,0 +1,106 @@
+/* terminos.module.css */
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  font-size: 2rem;
+  color: #236967;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section {
+  margin-bottom: 25px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: #236967;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #236967;
+  padding-bottom: 5px;
+}
+
+.section-content {
+  font-size: 1rem;
+  color: #333;
+  margin-left: 10px;
+}
+
+.list {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.text {
+  margin-bottom: 10px;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #236967;
+  margin: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .section-content {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .section-content {
+    font-size: 0.85rem;
+  }
+}

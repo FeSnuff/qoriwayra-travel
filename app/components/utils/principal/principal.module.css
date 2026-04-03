@@ -1,0 +1,529 @@
+/* ================================
+   CONTENEDOR GENERAL
+   ================================ */
+   .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 70px;
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    font-family: sans-serif;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* ================================
+     COLUMNA IZQUIERDA (Group Services)
+     ================================ */
+  .leftColumn {
+    width: 25%;
+    background: #fafafa;
+    padding: 20px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 60px;
+    margin-left: 30px;
+    text-align: center;
+  }
+  
+  .groupServices {
+    transition: all 0.3s ease;
+  }
+  
+  .priceSection {
+    margin-bottom: 20px;
+  }
+  
+  .priceSection h3 {
+    font-size: 1.5rem;
+    color: #236967;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bold;
+  }
+  
+  .bigIcon {
+    font-size: 32px;
+    color: #ffcc00;
+  }
+  
+  .bookButton {
+    background: linear-gradient(45deg, #ffcc00, #c29c04);
+    color: #236967;
+    font-size: 1.2rem;
+    margin: auto;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+  }
+  
+  .bookButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .quote {
+    margin: 30px 0 5px;
+    font-size: 1.2rem;
+    color: #236967;
+    font-weight: bold;
+  }
+  
+  .additionalInfo {
+    margin-bottom: 10px;
+  }
+  
+  /* Acordeón izquierda */
+  .leftAccordionContainer {
+    margin-top: 20px;
+  }
+  
+  .leftAccordionItem {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fdfdfd;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .leftAccordionItem:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .leftAccordionHeader {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #236967;
+    color: #BFB8AA;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .leftAccordionHeader:hover {
+    background: #0d3a2d;
+  }
+  
+  .leftArrowIcon {
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  .leftArrowIconOpen {
+    transform: rotate(180deg);
+  }
+  
+  .leftAccordionContent {
+    background: #ffffff;
+    text-align: left;
+    transition: max-height 0.5s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1rem;
+  }
+  
+  .leftAccordionItem.open .leftAccordionContent {
+    max-height: 2000px;
+    background: #f9f9f9;
+  }
+  
+  .leftAccordionText {
+    line-height: 1.6;
+    padding: 10px 0;
+  }
+  
+  /* ================================
+     COLUMNA DERECHA (Contenido Principal)
+     ================================ */
+  .rightColumn {
+    width: 75%;
+    padding-right: 40px; /* Aumenta el padding para que el contenido no se vea tan pegado */
+  }
+  
+  .entradaContainer {
+    margin-bottom: 2rem;
+  }
+  
+  .mainTitle {
+    font-size: 2rem;
+    color: #236967;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* INFORMACIÓN GENERAL */
+  .infoContainer {
+    margin-top: 20px;
+  }
+  
+  .tripOverview {
+    background: #f0efed;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  }
+  
+  .sectionSubtitleInfo {
+    font-size: 1.5rem;
+    color: #236967;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* ACORDEÓN PRINCIPAL */
+  .accordionContainer {
+    margin-top: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  
+  .accordionItem {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fdfdfd;
+    transition: box-shadow 0.3s ease;
+    padding-bottom: 20px;
+  }
+  
+  .accordionItem:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .accordionHeader {
+    width: 100%;
+    padding: 18px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #236967;
+    color: #BFB8AA;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .accordionHeader:hover {
+    background: #0d3a2d;
+  }
+  
+  .accordionContent {
+    background: #fff;
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+  }
+  
+  .accordionItem.open .accordionContent {
+    max-height: 1000px;
+    background: #f9f9f9;
+  }
+  
+  .accordionText {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    padding-top: 10px;
+  }
+  
+  .accordionServices h4 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    color: #236967;
+  }
+  
+  .accordionServices ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .accordionServices ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .icon {
+    color: #236967;
+  }
+  
+  .arrowIcon {
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+  }
+  
+  .arrowIconOpen {
+    transform: rotate(180deg);
+  }
+  
+  /* TIMELINE (Diseño Vertical) */
+  .timelineContainer {
+    background: #fff;
+    padding-top: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin-top: 20px;
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+  }
+  
+  .sectionSubtitleTimeLine {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #236967;
+    margin-left: 20px;
+  }
+  
+  
+  /* Contenido a la derecha de la línea */
+  .timelineContent {
+    margin-left: 30px;
+  }
+  
+  .timelineDay {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .timelineDay h3 {
+    font-size: 1.2rem;
+    color: #236967;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .timelineStep {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ================================
+     SECCIÓN DE IMÁGENES DEBAJO
+     ================================ */
+  .imageContainerBelow {
+    margin-top: 30px;
+  }
+  
+  .imageGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    gap: 8px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+  }
+  
+  /* La imagen grande (mapa) ocupará columnas 2 a 3 y filas 1 a 2 */
+  .mapImageWrapper {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  /* Las imágenes pequeñas se asignan a posiciones específicas */
+  .imagePosition1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .imagePosition2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .imagePosition3 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .imagePosition4 {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .imagePosition5 {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .mapImage,
+  .smallImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover en imágenes */
+  .mapImageWrapper:hover .mapImage,
+  .imagePosition1:hover img,
+  .imagePosition2:hover img,
+  .imagePosition3:hover img,
+  .imagePosition4:hover img,
+  .imagePosition5:hover img {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ================================
+     RESPONSIVE
+     ================================ */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      padding-top: 20px;
+    }
+  
+    .leftColumn {
+      position: static;
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+  
+    .rightColumn {
+      width: 100%;
+      padding-right: 0;
+    }
+  
+    .imageGrid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 150px);
+      gap: 10px;
+    }
+  
+    .mapImageWrapper {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+    }
+    .imagePosition1 {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .imagePosition2 {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    .imagePosition3 {
+      grid-column: 1;
+      grid-row: 3;
+    }
+    .imagePosition4 {
+      grid-column: 2;
+      grid-row: 3;
+    }
+    .imagePosition5 {
+      grid-column: 1 / 3;
+      grid-row: 4;
+    }
+  
+    .timelineContainer {
+      padding: 20px;
+    }
+    .timelineContent {
+      margin-left: 50px;
+    }
+    .timelineDay h3 {
+      font-size: 1.1rem;
+    }
+    .timelineStep {
+      font-size: 0.95rem;
+      padding-left: 25px;
+    }
+    .stepIndicator {
+      left: -25px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .bookButton {
+      font-size: 1rem;
+      padding: 8px 15px;
+    }
+  
+    .priceSection h3 {
+      font-size: 1.3rem;
+    }
+  
+    .leftColumn {
+      padding: 15px 10px 0;
+    }
+  
+    .imageGrid {
+      grid-template-rows: repeat(4, 120px);
+    }
+  
+    .mapImageWrapper {
+      grid-row: 1 / 2;
+    }
+  
+    .entradaContainer h1 {
+      font-size: 1.5rem;
+    }
+    .timelineDay h3 {
+      font-size: 1rem;
+    }
+    .timelineStep {
+      font-size: 0.9rem;
+    }
+  }
+  
