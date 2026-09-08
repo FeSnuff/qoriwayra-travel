@@ -1,0 +1,39 @@
+# ── dependencias ──────────────────────────────────────────────
+/node_modules
+/.pnp
+.pnp.*
+
+# ── compilación ───────────────────────────────────────────────
+/.next/
+/out/
+/build
+
+# ── entorno — NUNCA subir esto ────────────────────────────────
+# Las claves de Google Analytics y del pixel de Meta van en el
+# panel de Vercel, no en el repositorio.
+.env
+.env*.local
+
+# ── vercel ────────────────────────────────────────────────────
+.vercel
+
+# ── typescript ────────────────────────────────────────────────
+*.tsbuildinfo
+next-env.d.ts
+
+# ── sistema operativo ─────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+npm-debug.log*
+
+# ── fotos originales sin optimizar ────────────────────────────
+# public/img/ SÍ se sube: son las comprimidas, las que usa el sitio.
+# public/images/ son los originales de 11 MB, tu archivo de trabajo.
+# Guárdalos aparte; no tienen por qué viajar en cada despliegue.
+/public/images/
+
+# ── archivos de trabajo ───────────────────────────────────────
+*.zip
+estructura.txt
